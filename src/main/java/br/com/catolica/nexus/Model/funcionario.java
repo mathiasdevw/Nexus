@@ -1,26 +1,28 @@
 package br.com.catolica.nexus.Model;
 
+import org.springframework.data.annotation.Id;
 
-public class funcionario {
+public class Funcionario {
 
-    private int id;
+    @Id 
+    private String id;
     private String nome;
     private String especialidade;
     private String email;
     private String telefone;
 
 
-    public funcionario(int id, String nome, String especialidade, String email, String telefone) {
+    public Funcionario(String id, String nome, String especialidade, String email, String telefone) {
         this.id = id;
         this.nome = nome;
         this.especialidade = especialidade;
         this.email = email;
         this.telefone = telefone;
     }
-    public int getId() {
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getNome() {

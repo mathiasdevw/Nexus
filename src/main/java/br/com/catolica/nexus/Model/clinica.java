@@ -1,6 +1,6 @@
 package br.com.catolica.nexus.Model;
 
-public class clinica{
+public class Clinica{
 
 
     private String nome;
@@ -9,7 +9,7 @@ public class clinica{
     private String telefone;
     private String descricao;
 
-    public clinica(String nome, String cnpj, String endereco, String telefone, String descricao) {
+    public Clinica(String nome, String cnpj, String endereco, String telefone, String descricao) {
         this.nome = nome;
         this.cnpj = cnpj;
         this.endereco = endereco;

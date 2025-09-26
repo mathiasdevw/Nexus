@@ -6,28 +6,28 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.catolica.nexus.Model.paciente;
-import br.com.catolica.nexus.repository.pacienteRepository;
+import br.com.catolica.nexus.Model.Paciente;
+import br.com.catolica.nexus.repository.PacienteRepository;
 
 @Service
-public class pacienteService {
+public class PacienteService {
 
     @Autowired
-    private pacienteRepository repository;
+    private PacienteRepository repository;
 
-    public paciente criar(paciente paciente) {
+    public Paciente criar(Paciente paciente) {
         return repository.save(paciente);
     }
 
-    public List<paciente> listarTodos() {
+    public List<Paciente> listarTodos() {
         return repository.findAll();
     }
 
-    public Optional<paciente> buscarPorId(String id) {
+    public Optional<Paciente> buscarPorId(String id) {
         return repository.findById(id);
     }
 
-    public Optional<paciente> atualizar(String id, paciente pacienteAtualizado) {
+    public Optional<Paciente> atualizar(String id, Paciente pacienteAtualizado) {
         return repository.findById(id).map(paciente -> {
             paciente.setNome(pacienteAtualizado.getNome());
             paciente.setEmail(pacienteAtualizado.getEmail());

@@ -12,36 +12,36 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.catolica.nexus.Model.paciente;
-import br.com.catolica.nexus.Service.pacienteService;
+import br.com.catolica.nexus.Model.Paciente;
+import br.com.catolica.nexus.Service.PacienteService;
 
 @RestController
 @RequestMapping("/pacientes")
-public class pacienteController {
+public class PacienteController {
 
     @Autowired
-    private pacienteService service;
+    private PacienteService service;
 
     @PostMapping
-    public ResponseEntity<paciente> criar(@RequestBody paciente paciente) {
-        paciente salvo = service.criar(paciente);
+    public ResponseEntity<Paciente> criar(@RequestBody Paciente paciente) {
+        Paciente salvo = service.criar(paciente);
         return ResponseEntity.status(201).body(salvo);
     }
 
     @GetMapping
-    public ResponseEntity<List<paciente>> listar() {
+    public ResponseEntity<List<Paciente>> listar() {
         return ResponseEntity.ok(service.listarTodos());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<paciente> buscarPorId(@PathVariable String id) {
+    public ResponseEntity<Paciente> buscarPorId(@PathVariable String id) {
         return service.buscarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<paciente> atualizar(@PathVariable String id, @RequestBody paciente paciente) {
+    public ResponseEntity<Paciente> atualizar(@PathVariable String id, @RequestBody Paciente paciente) {
         return service.atualizar(id, paciente)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
