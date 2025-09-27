@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import br.com.catolica.nexus.Model.Paciente;
 
+//Interface para as operações de acesso a dados dos pacientes
+
 @Repository
 public interface PacienteRepository extends MongoRepository<Paciente, String> {
 

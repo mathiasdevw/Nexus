@@ -1,17 +1,26 @@
 package br.com.catolica.nexus.Model;
-
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import jakarta.validation.constraints.NotBlank;
+
+@Document(collection = "pacientes")
 
 public class Paciente {
 
-
     @Id
     private String id;
+    @NotBlank(message = "O nome não pode estar em branco")
     private String nome;
+    @NotBlank(message = "O email não pode estar em branco")
     private String email;
+    @NotBlank(message = "A senha não pode estar em branco")
     private String senha;
+    @NotBlank(message = "O telefone não pode estar em branco")  
     private String telefone;
 
+
+    public Paciente() {}
 
     public Paciente(String id, String nome, String email, String senha, String telefone) {
         this.id = id;
