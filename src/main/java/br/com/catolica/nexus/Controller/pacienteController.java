@@ -1,5 +1,4 @@
 package br.com.catolica.nexus.Controller;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,8 +16,6 @@ import br.com.catolica.nexus.Model.Paciente;
 import br.com.catolica.nexus.Service.PacienteService;
 
 
-//Recebe as requisições HTTP relacionadas aos pacientes
-
 
 @RestController
 @RequestMapping("/pacientes")
@@ -33,7 +30,6 @@ public class PacienteController {
         return ResponseEntity.status(201).body(salvo);
     }
 
-    //Lista pacientes por paginas, facilitando o front-end 
     @GetMapping
     public ResponseEntity<Page<Paciente>> listar(Pageable pageable) {
         return ResponseEntity.ok(service.listarTodos(pageable));

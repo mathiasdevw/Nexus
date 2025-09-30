@@ -15,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.RequestBody;
 
-//Recebe as requisições HTTP relacionadas às clínicas
 
 @RequestMapping("/clinicas")
 @RestController

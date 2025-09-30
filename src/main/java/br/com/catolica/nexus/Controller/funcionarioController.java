@@ -1,5 +1,4 @@
 package br.com.catolica.nexus.Controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,11 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import jakarta.validation.Valid;
 import br.com.catolica.nexus.Model.Funcionario;
-import br.com.catolica.nexus.Model.Paciente;
 import br.com.catolica.nexus.Service.FuncionarioService;
-import br.com.catolica.nexus.Service.PacienteService;
 
-//recebe as requisições HTTP relacionadas aos funcionários
 
 @RequestMapping("/funcionarios")
 @RestController

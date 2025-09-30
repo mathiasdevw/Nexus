@@ -1,15 +1,11 @@
 package br.com.catolica.nexus.Model;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-
 @Document(collection = "funcionarios")
-public class Funcionario {
+public class Funcionario{
 
     @Id 
     private String id;
@@ -74,6 +70,7 @@ public class Funcionario {
     }
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    } 
+    }
+
 
 }
